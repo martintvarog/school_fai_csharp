@@ -10,20 +10,26 @@ namespace myFirstProject
     {
         static void Main(string[] args)
         {
-            double myWeight2020 = 69.5;
-            double myWeight2021;
+            int max = 100;
+            bool jePrvocislo;
 
-            string weightAsString;
-            Console.WriteLine("What is your current weight?");
-            weightAsString = Console.ReadLine();
-            myWeight2021 = double.Parse(weightAsString);
-
-            bool isMyWeightLower;
-            isMyWeightLower = myWeight2020 > myWeight2021;
-
-            Console.WriteLine("Did I loose weight?");
-            Console.WriteLine(isMyWeightLower);
-            Console.ReadKey();
+            for(int cislo = 2; cislo <= max; cislo++)
+            {
+                jePrvocislo = true;
+                
+                for(int i = cislo - 1; i > 1; i-- )
+                {
+                    if(cislo % i == 0)
+                    {
+                        jePrvocislo = false;
+                        break;
+                    }
+                }
+                if(jePrvocislo)
+                {
+                    Console.WriteLine(cislo);
+                }
+            }
         }
     }
 }
